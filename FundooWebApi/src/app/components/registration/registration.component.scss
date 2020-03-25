@@ -1,0 +1,58 @@
+.register{
+    
+    margin: 0;
+    height: 100vh;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-flow: wrap;
+  
+}
+
+.content{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 60vh;
+   width:50vh;
+    
+  }
+  .label{
+   align-content: center;
+   width: 50vh;
+  }
+
+  .title{
+       color:#d2691e;
+       font-style: oblique;
+       margin-left:1em;
+       font-size: 2em;
+  }
+
+  .card{
+   border-style: outset;
+   margin-top:auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: 40%;
+   height: 70%;
+   
+}
+
+.mat-card-header .mat-card-title {
+    margin-bottom: 40px;
+}
+.mat-card-actions {
+    margin-left: auto;
+    padding: 8px 0;
+ }
+.mat-raised-button.mat-primary {
+    size: inherit;
+    background-color: #d2691e;
+}
+.mat-card-actions .mat-button:first-child, .mat-card-actions .mat-raised-button:first-child, .mat-card-actions .mat-stroked-button:first-child {
+    margin-left: 25%;
+    margin-right: 0;
+    margin-top: 0em;
+}
