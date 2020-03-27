@@ -1,5 +1,6 @@
 .register{
-    
+   //background-image: url('C:\Users\Mr Sandeep\Documents\Angular\FundooWebApi\src\app\components\registration');
+    background-color: beige;   
     margin: 0;
     height: 100vh;
     align-content: center;
@@ -8,8 +9,8 @@
     justify-content: space-around;
     flex-flow: wrap;
   
+  
 }
-
 .content{
    display: flex;
    align-items: center;
@@ -25,18 +26,19 @@
 
   .title{
        color:#d2691e;
-       font-style: oblique;
+       font-style: unset;
        margin-left:1em;
        font-size: 2em;
   }
 
   .card{
+ background-color: beige;
    border-style: outset;
    margin-top:auto;
     margin-right: auto;
     margin-bottom: 0px;
     margin-left: 40%;
-   height: 70%;
+   height: 80%;
    
 }
 

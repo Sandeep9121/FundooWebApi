@@ -1,0 +1,29 @@
+<div class="login" >
+    <mat-card>
+      <mat-card-header>
+       <div mat-card-avatar  ></div>
+        <mat-card-title class="Login">Login
+        </mat-card-title>
+    </mat-card-header>
+      <div class="content">
+        <mat-card-content  >
+           
+          <div>
+            <mat-form-field appearance="outline" class="label">
+              <mat-label>Email</mat-label> 
+                <input matInput placeholder="email" type="email" >
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="label">
+              <mat-label>Password</mat-label> 
+                <input matInput placeholder="password" type="password"  >
+            </mat-form-field>
+          </div>
+        
+          <button mat-raised-button  (click)="onSubmit()" type="submit">Login</button><br/><br/>
+      <a routerLink="/register">Register</a><br/><br/>
+  
+       </mat-card-content>
+      </div>
+    </mat-card>
+  </div>
