@@ -3,7 +3,7 @@
     background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png');
     background-color: beige;   
     margin: 0;
-    height: 100vh;
+    height: 110vh;
     align-content: center;
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@
        color:#d2691e;
        font-style: unset;
        margin-left:1em;
-       font-size: em;
+       font-size: 2em;
   }
 
   .card{
@@ -49,7 +49,7 @@
 }
 .mat-card-actions {
     margin-left: auto;
-    padding: 8px 0;
+    padding: 4px 0;
  }
  .mat-fab, .mat-flat-button, .mat-mini-fab, .mat-raised-button {
     color: rgba(0,0,0,.87);
