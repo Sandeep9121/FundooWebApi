@@ -21,6 +21,7 @@
     
   }
   .label{
+      margin-top:auto;
    align-content: center;
    width: 50vh;
   }
@@ -29,7 +30,7 @@
        color:#d2691e;
        font-style: unset;
        margin-left:1em;
-       font-size: 2em;
+       font-size: em;
   }
 
   .card{
@@ -44,18 +45,13 @@
 }
 
 .mat-card-header .mat-card-title {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 .mat-card-actions {
     margin-left: auto;
     padding: 8px 0;
  }
-.mat-raised-button.mat-primary {
-    size: inherit;
+ .mat-fab, .mat-flat-button, .mat-mini-fab, .mat-raised-button {
+    color: rgba(0,0,0,.87);
     background-color: #d2691e;
-}
-.mat-card-actions .mat-button:first-child, .mat-card-actions .mat-raised-button:first-child, .mat-card-actions .mat-stroked-button:first-child {
-    margin-left: 25%;
-    margin-right: 0;
-    margin-top: 0em;
 }

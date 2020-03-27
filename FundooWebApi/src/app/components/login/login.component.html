@@ -8,7 +8,7 @@
       <div class="content">
         <mat-card-content  >
            
-          <div>
+    
             <mat-form-field appearance="outline" class="label">
               <mat-label>Email</mat-label> 
                 <input matInput placeholder="email" type="email" >
@@ -18,10 +18,12 @@
               <mat-label>Password</mat-label> 
                 <input matInput placeholder="password" type="password"  >
             </mat-form-field>
-          </div>
+          
         
-          <button mat-raised-button  (click)="onSubmit()" type="submit">Login</button><br/><br/>
-      <a routerLink="/register">Register</a><br/><br/>
+          <button mat-raised-button  (click)="onSubmit()" type="submit">Login</button>
+          <br/><br/>
+           <a routerLink="/register">Register</a>
+           <br/><br/>
   
        </mat-card-content>
       </div>
