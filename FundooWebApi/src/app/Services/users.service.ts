@@ -6,6 +6,7 @@ import { Observable} from 'rxjs';
 import {Users} from 'src/app/Model/users.model';
 import {Login} from 'src/app/Model/login.model';
 import { Resetpassword } from '../Model/resetpassword.model';
+import { Forgotpassword } from '../Model/forgotpassword.model';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,9 @@ export class UsersService {
   {
     return this.httpService.put(this.userApiUrl+environment.resetPasswordUrl,resetPassword,this.httpOptions);
   }
-
+  userForgotPassword(forgotPassword:Forgotpassword):Observable<any>
+  {
+    return this.httpService.post(this.userApiUrl+environment.forgotPasswordUrl,forgotPassword,this.httpOptions);
+  }
 
 }
