@@ -5,6 +5,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { Observable} from 'rxjs';
 import {Users} from 'src/app/Model/users.model';
 import {Login} from 'src/app/Model/login.model';
+import { Resetpassword } from '../Model/resetpassword.model';
 
 @Injectable({
   providedIn: 'root'
@@ -28,4 +29,11 @@ export class UsersService {
   {
      return this.httpService.post(this.userApiUrl+environment.loginUrl,login,this.httpOptions);
   }
+
+  userSetPassword(resetPassword:Resetpassword)
+  {
+    return this.httpService.put(this.userApiUrl+environment.resetPasswordUrl,resetPassword,this.httpOptions);
+  }
+
+
 }
