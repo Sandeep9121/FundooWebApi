@@ -15,12 +15,14 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,
