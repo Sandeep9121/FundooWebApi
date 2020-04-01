@@ -35,8 +35,8 @@
     
                   <mat-form-field appearance="outline" class="label">
                     <mat-label>PhoneNo</mat-label> 
-                      <input matInput placeholder="phoneNo" type="text" [formControl]="phoneNumber" >
-                      <mat-error *ngIf="phoneNumber.invalid">{{getPhoneNoErrorMessage()}}</mat-error>
+                      <input matInput placeholder="phoneNo" type="text" [formControl]="mobileNumber" >
+                      <mat-error *ngIf="mobileNumber.invalid">{{getPhoneNoErrorMessage()}}</mat-error>
                   </mat-form-field>
     
                   <mat-card-actions>
