@@ -20,7 +20,7 @@ export class RegistrationComponent implements OnInit {
   name=new FormControl(null,[Validators.required , Validators.pattern('[a-zA-Z]{3,20}')]);
   email = new FormControl(null,[Validators.required,Validators.email]);
   password= new FormControl(null,[Validators.required,Validators.pattern('[a-zA-Z0-9@#$%&]{8,20}')]);
-  phoneNumber=new FormControl(null,[Validators.required,Validators.pattern('^[1-9]{1}[0-9]{9}$')]);
+  mobileNumber=new FormControl(null,[Validators.required,Validators.pattern('^[1-9]{1}[0-9]{9}$')]);
 
   getNameErrorMessage(){
     return this.name.hasError('required')? "Enter name":
@@ -41,22 +41,22 @@ export class RegistrationComponent implements OnInit {
    }
 
    getPhoneNoErrorMessage(){
-    return this.phoneNumber.hasError('required')? "Enter PhoneNo":
-    this.phoneNumber.hasError('pattern')? "PhoneNo not valid":
+    return this.mobileNumber.hasError('required')? "Enter PhoneNo":
+    this.mobileNumber.hasError('pattern')? "PhoneNo not valid":
      "";
    }
    onSubmit(){
      this.user.name = this.name.value;
      this.user.email = this.email.value;
      this.user.password = this.password.value;
-     this.user.phoneNumber = this.phoneNumber.value;
+     this.user.mobileNumber = this.mobileNumber.value;
      this.usersService.usersRegister(this.user).subscribe(
       (response:any) =>{
-        this.matSnackBar.open(response.message+" check mail to verify", "succesfull", {duration:5000})
+        this.matSnackBar.open(" check mail to verify", "succesfull", {duration:5000})
         this.router.navigate(["/login"]);
      },
      (error:any)=> {
-       this.matSnackBar.open(error.error.message, "failed", {duration:5000})
+       this.matSnackBar.open("failed register", "failed", {duration:5000})
      }
      );
    }
