@@ -17,9 +17,9 @@ export class UsersService {
     headers: new HttpHeaders ({'content-type':'application/json'})
     };
   constructor(private httpService:HttpService) { }
-  usersRegister(users:Users):Observable<any>
+  usersRegister(users:Users)
   {
-    console.log("--user-----phoneNube",users.phoneNumber);
+    console.log("--user-----phoneNube",users.mobileNumber);
   console.log("--user-----userMAil",users.email);
   console.log("--user-----Pass",users.password);
   return this.httpService.post(this.userApiUrl+environment.registerUrl,users,this.httpOptions);
@@ -31,13 +31,17 @@ export class UsersService {
      return this.httpService.post(this.userApiUrl+environment.loginUrl,login,this.httpOptions);
   }
 
-  userSetPassword(resetPassword:Resetpassword)
+  userSetPassword(resetPassword:Resetpassword , token:String)
   {
-    return this.httpService.put(this.userApiUrl+environment.resetPasswordUrl,resetPassword,this.httpOptions);
+    return this.httpService.put(this.userApiUrl+environment.resetPasswordUrl+token,resetPassword,this.httpOptions);
   }
   userForgotPassword(forgotPassword:Forgotpassword):Observable<any>
   {
     return this.httpService.post(this.userApiUrl+environment.forgotPasswordUrl,forgotPassword,this.httpOptions);
+  }
+  userVerification(token:String)
+  {
+return this.httpService.put(this.userApiUrl+environment.userVerification+token,"" , this.httpOptions);
   }
 
 }
