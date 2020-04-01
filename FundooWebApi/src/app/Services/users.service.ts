@@ -33,11 +33,15 @@ export class UsersService {
 
   userSetPassword(resetPassword:Resetpassword , token:String)
   {
+    console.log("pass:"+resetPassword.newPassword);
     return this.httpService.put(this.userApiUrl+environment.resetPasswordUrl+token,resetPassword,this.httpOptions);
   }
   userForgotPassword(forgotPassword:Forgotpassword):Observable<any>
   {
+    console.log('log---------------------',this.httpOptions);
     return this.httpService.post(this.userApiUrl+environment.forgotPasswordUrl,forgotPassword,this.httpOptions);
+ //   return this.httpService.post(this.userApiURL+environment.forgotpasswordURl,forgotpassword,this.httpOptions);
+      
   }
   userVerification(token:String)
   {
