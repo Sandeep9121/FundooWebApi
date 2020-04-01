@@ -42,8 +42,8 @@ export class ResetpasswordComponent implements OnInit {
    onSubmit()
    {
     if(this.password.value===this.confirmPassword.value){
-    this.resetpassword.password = this.password.value;
-    this.resetpassword.confirmPassword = this.confirmPassword.value;
+    this.resetpassword.newPassword = this.password.value;
+    this.resetpassword.changepassword = this.confirmPassword.value;
     this.userService.userSetPassword(this.resetpassword ,this.token).subscribe(
       (response:any) =>{
         
