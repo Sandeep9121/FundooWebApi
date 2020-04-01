@@ -8,7 +8,7 @@ export const environment = {
   userApiUrl:'http://localhost:8081/users',
   registerUrl:'/register',
   loginUrl:'/login',
-  resetPasswordUrl:'/updatePassword',
+  resetPasswordUrl:'/updatePassword/',
   forgotPasswordUrl:'/forgotPassword',
   userVerification:'/verify/'
 
