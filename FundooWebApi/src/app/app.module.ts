@@ -16,13 +16,20 @@ import {MatIconModule} from '@angular/material/icon';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+import { UserVerificationComponent } from './components/user-verification/user-verification.component';
+
+    //import { DashboardComponent } from './components/dashboard/dashboard.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
     ResetpasswordComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    UserVerificationComponent,
+    //DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,8 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
     HttpClientModule,
     MatSnackBarModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
