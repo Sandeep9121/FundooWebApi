@@ -4,6 +4,7 @@ import { Resetpassword } from 'src/app/Model/resetpassword.model';
 import { UsersService } from 'src/app/Services/users.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-resetpassword',
@@ -12,17 +13,18 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ResetpasswordComponent implements OnInit {
   resetpassword:Resetpassword=new Resetpassword();
-
-  constructor(private usersService:UsersService, private router:Router,private matSnakBar:MatSnackBar) { 
-
-  }
-
+ constructor(private userService:UsersService,private router:Router,private route:ActivatedRoute,private matSnackBar:MatSnackBar) { }
+ 
+  token:string;
   ngOnInit() {
+    
+    this.token = this.route.snapshot.paramMap.get("token");
   }
 
-
+  
   password= new FormControl(null,[Validators.required,Validators.pattern('[a-zA-Z0-9@#$%&]{8,20}')]);
   confirmPassword= new FormControl(null,[Validators.required,Validators.pattern('[a-zA-Z0-9@#$%&]{8,20}')]);
+
 
 
    getPasswordErrorMessage(){
@@ -39,24 +41,27 @@ export class ResetpasswordComponent implements OnInit {
 
    onSubmit()
    {
-
-
+    if(this.password.value===this.confirmPassword.value){
     this.resetpassword.password = this.password.value;
     this.resetpassword.confirmPassword = this.confirmPassword.value;
-    this.usersService.userSetPassword(this.resetpassword).subscribe(
+    this.userService.userSetPassword(this.resetpassword ,this.token).subscribe(
       (response:any) =>{
         
-         this.matSnakBar.open("Password reset", "success", {duration:5000})
+        console.log("token:"+this.token);
+         this.matSnackBar.open("Password reset success", "success", {duration:5000})
          this.router.navigate(["/login"]);
       },
-      error=> {
-        this.matSnakBar.open("Check credentials", "failed to reset", {duration:5000})
+      (error:any)=> {
+        this.matSnackBar.open("Check credentials", "failed", {duration:5000})
       }
 
     );
-   } 
- 
-
+   }
+   else
+   {
+    this.matSnackBar.open("Password mismatch", "Failed", {duration:5000})
+   }
+   }
 
 
 
