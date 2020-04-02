@@ -42,10 +42,11 @@ this.usersService.usersLogin(this.login).subscribe(
 console.log("message:"+response.message);
     
     this.matSnackBar.open(response.message, "succesfull", {duration:5000})
-  
+    this.router.navigate(["/dashboard"]);
  },
  (error:any)=> {
    this.matSnackBar.open(error.error.message, "failed to Login", {duration:5000})
+  
  }
 );
 
