@@ -11,12 +11,14 @@
             </button>
         </span>
 
-        <img class="fundoo-icon" src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png" srcset="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png 1x, https://www.gstatic.com/images/branding/product/2x/keep_48dp.png 2x " alt="" aria-hidden="true" style="width:40px;height:40px">
-            <span>FundooNote</span>
+        <img class="fundoo-icon" src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png" 
+        srcset="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png 1x, https://www.gstatic.com/images/branding/product/2x/keep_48dp.png 2x "
+         alt="" aria-hidden="true" style="width:40px;height:40px">
+            <span>Fundoo</span>
 
             <div class="search">
        
-      <button mat-icon-button  class="search-icon">
+      <button mat-icon-button  class="search-icon"> 
         <mat-icon>search</mat-icon>
       </button>
       <input type="text" placeholder="Search" class="search-input" >
@@ -35,8 +37,8 @@
 
       </div>
 
-      <div class="signout">
-        <button  mat-button  (click)="onClick()" color="primary">SignOut</button>
+      <div class="logout">
+        <button  mat-button  (click)="onClick()" color="primary">LogOut</button>
       </div>
 
     </mat-toolbar-row>
@@ -44,4 +46,71 @@
 
     </mat-toolbar>
 </div>
+<div class="sidenav">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav class="matSidenav" #sidenav mode="side" >
+      <div>
+        <button mat-button class="navbutton">
+          <mat-icon class ="sidenav-icon">lightbulb_outline</mat-icon>
+           <span class= "icon-label">Notes</span>
+           </button>
+
+           <button mat-button class="navbutton">
+            <mat-icon class ="sidenav-icon">notifications_none</mat-icon>
+              <span class="icon-label">Reminders</span>
+             </button>
+    </div>
+    <!----------------------mat divider-->
+    <mat-divider class="divider"></mat-divider>
+
+    <div>
+        <span ><h3 class="label">LABELS</h3></span>
+        <div>
+            <button mat-button class="navbutton">
+                <mat-icon class ="sidenav-icon">create</mat-icon>
+               <span class="icon-label">Edit labels</span>
+               </button>
+        </div>
+    </div>
+
+    <mat-divider class="divider"></mat-divider>
+   <!----------------------mat divider  ends-->
+    
+   <mat-divider class="divider"></mat-divider>
+
+   <div>
+       <span ><h3 class="label">LABELS</h3></span>
+       <div>
+           <button mat-button class="navbutton">
+               <mat-icon class ="sidenav-icon">create</mat-icon>
+              <span class="icon-label">Edit labels</span>
+              </button>
+       </div>
+   </div>
+   <mat-divider class="divider"></mat-divider>
+
+   <div>
+    <button mat-button class="navbutton">
+       <mat-icon class ="sidenav-icon">archive</mat-icon>
+       <span class="icon-label">Archive</span>
+      </button>
+</div>
+<div >
+    <button mat-button class="navbutton">
+      <mat-icon class ="sidenav-icon">delete</mat-icon>
+      <span class= "icon-label">Trash</span>
+      </button>
+</div>
+
+
+    </mat-sidenav>
+
+    </mat-sidenav-container>
+
+
+</div>
+
+
+
+
 </div>
