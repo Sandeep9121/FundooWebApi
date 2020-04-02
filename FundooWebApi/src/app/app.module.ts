@@ -52,6 +52,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSidenavModule,
     MatTooltipModule,
     MatDividerModule,
+    FlexLayoutModule
   
   ],
   providers: [],
