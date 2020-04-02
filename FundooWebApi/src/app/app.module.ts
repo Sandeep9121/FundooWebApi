@@ -18,7 +18,12 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { UserVerificationComponent } from './components/user-verification/user-verification.component';
 
-    //import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDividerModule} from '@angular/material/divider';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -29,7 +34,7 @@ import { UserVerificationComponent } from './components/user-verification/user-v
     ResetpasswordComponent,
     ForgotpasswordComponent,
     UserVerificationComponent,
-    //DashboardComponent,
+   DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +48,10 @@ import { UserVerificationComponent } from './components/user-verification/user-v
     MatSnackBarModule,
     ReactiveFormsModule,
     MatIconModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatTooltipModule,
+    MatDividerModule,
   
   ],
   providers: [],

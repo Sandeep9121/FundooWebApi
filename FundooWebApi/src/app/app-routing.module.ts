@@ -6,7 +6,7 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 
 import { UserVerificationComponent } from './components/user-verification/user-verification.component';
-//import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 const routes: Routes = [
   {path:"registration",component:RegistrationComponent},
   {path:"login",component:LoginComponent},
@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:"resetpassword/:token",component:ResetpasswordComponent},
   {path:"forgotpassword",component:ForgotpasswordComponent},
   {path:"userVerification/:token",component:UserVerificationComponent}
-  //,{path:"dashboard",component:DashboardComponent}
+  ,{path:"dashboard",component:DashboardComponent}
 ];
 
 @NgModule(
