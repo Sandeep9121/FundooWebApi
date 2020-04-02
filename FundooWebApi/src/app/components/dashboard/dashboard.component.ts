@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
-
+  constructor(private router:Router) { }
   ngOnInit() {
   }
 
+onClick()
+{
+  localStorage.clear();
+  this.router.navigate(["/login"]);
+}
 }
