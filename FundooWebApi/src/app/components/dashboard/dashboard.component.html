@@ -23,7 +23,7 @@
       </button>
       <input type="text" placeholder="Search" class="search-input" >
     </div>
-
+         <mat-divider class="divider"></mat-divider>
     <div class="rightside-icons">
         <button mat-icon-button class="refresh">
           <mat-icon>refresh</mat-icon>
@@ -54,32 +54,18 @@
           <mat-icon class ="sidenav-icon">lightbulb_outline</mat-icon>
            <span class= "icon-label">Notes</span>
            </button>
-
+      </div>
+      <mat-divider class="divider"></mat-divider>
+           <div>
            <button mat-button class="navbutton">
             <mat-icon class ="sidenav-icon">notifications_none</mat-icon>
               <span class="icon-label">Reminders</span>
              </button>
     </div>
-    <!----------------------mat divider-->
-    <mat-divider class="divider"></mat-divider>
 
-    <div>
-        <span ><h3 class="label">LABELS</h3></span>
-        <div>
-            <button mat-button class="navbutton">
-                <mat-icon class ="sidenav-icon">create</mat-icon>
-               <span class="icon-label">Edit labels</span>
-               </button>
-        </div>
-    </div>
-
-    <mat-divider class="divider"></mat-divider>
-   <!----------------------mat divider  ends-->
-    
    <mat-divider class="divider"></mat-divider>
 
    <div>
-       <span ><h3 class="label">LABELS</h3></span>
        <div>
            <button mat-button class="navbutton">
                <mat-icon class ="sidenav-icon">create</mat-icon>
@@ -95,6 +81,7 @@
        <span class="icon-label">Archive</span>
       </button>
 </div>
+<mat-divider class="divider"></mat-divider>
 <div >
     <button mat-button class="navbutton">
       <mat-icon class ="sidenav-icon">delete</mat-icon>
@@ -104,6 +91,15 @@
 
 
     </mat-sidenav>
+
+
+
+    <mat-sidenav-content class="sideContent">
+      <app-createnotes></app-createnotes>
+      <router-outlet ></router-outlet>
+      
+      <!-- <app-displaynotes></app-displaynotes> -->
+    </mat-sidenav-content>
 
     </mat-sidenav-container>
 
