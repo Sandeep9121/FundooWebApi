@@ -85,7 +85,6 @@
         overflow: hidden;
         justify-content: center !important;
         background-color: transparent;
-        // border-color: 1px whitesmoke;
         border:none;
         margin-top: 10px;
     }
@@ -129,6 +128,13 @@
         margin: 20px 0 20px 0;
         
         
+    }
+     
+    .sideContent {
+        justify-content: center;
+        width: 100%;
+        align-content: center;
+        height: 100%;
     }
 
     .label{

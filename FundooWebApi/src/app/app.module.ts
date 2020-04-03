@@ -10,9 +10,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
+
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
@@ -25,6 +27,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { CreatenotesComponent } from './createnotes/createnotes.component';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +39,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ForgotpasswordComponent,
     UserVerificationComponent,
    DashboardComponent,
+   CreatenotesComponent,
   ],
   imports: [
     BrowserModule,

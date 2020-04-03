@@ -10,7 +10,10 @@ export const environment = {
   loginUrl:'/login',
   resetPasswordUrl:'/updatePassword/',
   forgotPasswordUrl:'/forgotPassword',
-  userVerification:'/verify/'
+  userVerification:'/verify/',
+
+  noteApiUrl:'http://localhost:8081/note',
+  createNoteUrl:'/create'
 
 };
 
