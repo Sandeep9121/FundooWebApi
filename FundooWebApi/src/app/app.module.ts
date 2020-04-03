@@ -27,8 +27,14 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { CreatenotesComponent } from './createnotes/createnotes.component';
+import {MatMenuModule} from '@angular/material/menu'
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatSelectModule} from '@angular/material/select';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
+import { CreatenotesComponent } from './createnotes/createnotes.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +64,12 @@ import { CreatenotesComponent } from './createnotes/createnotes.component';
     MatTooltipModule,
     MatDividerModule,
     FlexLayoutModule
+    ,MatMenuModule
+    ,MatDialogModule
+    ,MatBottomSheetModule
+    ,MatSelectModule
+    ,MatGridListModule
+    ,MatButtonToggleModule
   
   ],
   providers: [],

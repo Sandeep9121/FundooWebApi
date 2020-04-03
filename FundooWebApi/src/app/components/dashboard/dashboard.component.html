@@ -37,9 +37,39 @@
 
       </div>
 
-      <div class="logout">
+     <!--<div class="logout">
         <button  mat-button  (click)="onClick()" color="primary">LogOut</button>
-      </div>
+      </div>-->
+      <div class="signout-container">
+        <div>
+            <button mat-button [matMenuTriggerFor]="beforeMenu"><img src="..\assets\images\profile.jpg" alt="Avatar"  style="border-radius: 50%;" class="profilepic" ></button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <div>
+                    <mat-card class="example-card">
+                        <div class="profilediv">
+                            <img src="..\assets\images\profile.jpg" alt="Avatar"  style="border-radius: 50%;" class="profilepic" >
+                        </div>
+                        <mat-card-header>
+                          <mat-card-title style="margin-left: 55px;">Sandeep</mat-card-title>
+                          <mat-card-subtitle>sandeep.rayala14@gmail.com</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-divider>
+                        </mat-divider>
+                        <mat-card-content>
+                         <h5>User Detaials:</h5>
+                        </mat-card-content>
+                        <mat-card-actions>
+                          <button mat-button>LIKE</button>
+                          <button mat-button>SHARE</button>
+                        </mat-card-actions>
+                      </mat-card>
+                </div>
+                        <button (click)="onClick()" mat-stroked-button color="primary" style="margin-left: 70px; margin-top: 8px;">Logout</button>
+            </mat-menu>
+        </div>
+    </div>
+  
+  <!-------mat card-->
 
     </mat-toolbar-row>
   
