@@ -16,4 +16,8 @@ onClick()
   localStorage.clear();
   this.router.navigate(["/login"]);
 }
+getEmail(){
+  return localStorage.getItem('email');
+}
+
 }

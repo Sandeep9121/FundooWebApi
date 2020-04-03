@@ -40,8 +40,9 @@ this.usersService.usersLogin(this.login).subscribe(
 
   (response:any) =>{
 console.log("message:"+response.message);
-//added token in the local storage
+//added token in the local storage 
 localStorage.setItem('token' , response.token);
+localStorage.setItem('email',this.email.value);
     this.matSnackBar.open(response.message, "succesfull", {duration:5000})
     this.router.navigate(["/dashboard"]);
  },
