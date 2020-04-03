@@ -17,7 +17,7 @@ export class UsersService {
     headers: new HttpHeaders ({'content-type':'application/json'})
     };
   constructor(private httpService:HttpService) { }
-  usersRegister(users:Users)
+  usersRegister(users:Users):Observable<any>
   {
     console.log("--user-----phoneNube",users.mobileNumber);
   console.log("--user-----userMAil",users.email);
@@ -26,7 +26,7 @@ export class UsersService {
   }
 
 
-  usersLogin(login:Login)
+  usersLogin(login:Login):Observable<any>
   {
      return this.httpService.post(this.userApiUrl+environment.loginUrl,login,this.httpOptions);
   }
