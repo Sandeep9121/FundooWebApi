@@ -1,5 +1,7 @@
 export class Note {
     
-    title:String;
-    description:String;
+    public title: String;
+    public description: String;
+    
+
 }
