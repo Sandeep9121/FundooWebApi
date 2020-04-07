@@ -26,6 +26,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { from } from "rxjs";
 
 import {MatMenuModule} from '@angular/material/menu'
 import {MatDialogModule} from '@angular/material/dialog';
@@ -34,7 +35,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
-import { CreatenotesComponent } from './createnotes/createnotes.component';
+import { CreatenotesComponent } from './components/createnotes/createnotes.component';
+import { SinglenoteComponent } from './components/singlenote/singlenote.component';
+import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { CreatenotesComponent } from './createnotes/createnotes.component';
     ForgotpasswordComponent,
     UserVerificationComponent,
    DashboardComponent,
+   DisplaynotesComponent,
    CreatenotesComponent,
+   SinglenoteComponent,
+
   ],
   imports: [
     BrowserModule,
