@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  value= '';
   constructor(private router:Router) { }
   ngOnInit() {
   }

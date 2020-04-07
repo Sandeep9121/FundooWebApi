@@ -53,14 +53,16 @@
         margin-left: 15%;
       }
 
-      .logout{
-          margin-left: 9%;
+      .signout{
+          margin-left: 10%;
       }
 
-      .menu{ 
+      .menu{
           margin-left: -25%;
       }
-      .sidenav{
+
+
+      .sidenav-div {
         height: 100%;
         width: 100%;
         overflow: auto;
@@ -85,6 +87,7 @@
         overflow: hidden;
         justify-content: center !important;
         background-color: transparent;
+        // border-color: 1px whitesmoke;
         border:none;
         margin-top: 10px;
     }
@@ -125,31 +128,35 @@
     }
 
     .divider {
+        // margin-top: 20px;
         margin: 20px 0 20px 0;
         
         
     }
-     
-    .sideContent {
+
+    .label{
+        // margin-top:1000px;
+        margin-left: 30px;
+    }
+
+    .sidenav-content {
         justify-content: center;
         width: 100%;
         align-content: center;
         height: 100%;
     }
+    .header{
+        justify-content: center;
+        align-content: center;
 
-    .label{
-        margin-left: 30px;
     }
-    .profile
-  {
-    border-radius: 50%;
-  }
 
-  .signout-container
-{
-    display: flex;
-}
-.profilepic
+    .signout-button{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .profilepic
 {
     width:37px;
     height:32px;
