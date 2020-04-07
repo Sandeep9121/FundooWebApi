@@ -1,0 +1,10 @@
+<div>
+    <app-createnotes></app-createnotes>
+<div id="container"  fxLayout="column wrap" fxLayout.xs="coloum wrap" >
+    <div fxLayout="{{rowGrid}} wrap" fxLayoutGap="10px" >
+<div *ngFor="let note of notes">
+    <app-singlenote [note]="note"></app-singlenote>
+</div>
+</div>
+</div>
+</div>
