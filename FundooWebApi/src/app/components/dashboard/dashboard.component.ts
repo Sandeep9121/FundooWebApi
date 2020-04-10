@@ -7,18 +7,38 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+
   value= '';
   constructor(private router:Router) { }
+
   ngOnInit() {
   }
+
+
 
 onClick()
 {
   localStorage.clear();
   this.router.navigate(["/login"]);
 }
-getEmail(){
+
+getEmail()
+{
   return localStorage.getItem('email');
 }
 
+
+refresh() {
+  console.log("reloading");
+window.location.reload();
+}
+
+onArchive(){
+  this.router.navigate(['dashboard/displaynote'],{queryParams:{note:'archive'}});
+  
+}
+
+onTrash(){
+  this.router.navigate(['dashboard/displaynote'],{queryParams:{note:'trash'}});
+}
 }

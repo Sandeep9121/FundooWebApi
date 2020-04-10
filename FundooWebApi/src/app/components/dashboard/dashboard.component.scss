@@ -156,9 +156,22 @@
         justify-content: center;
         align-content: center;
     }
-    .profilepic
-{
-    width:37px;
-    height:32px;
-    margin-left: 94px;
-}
+    .profile
+    {
+      border-radius: 50%;
+    }
+  
+    .signout-container
+  {
+      display: flex;    
+        justify-content: center;
+      align-content: center;
+
+
+  }
+  .profilepic
+  {
+      width:37px;
+      height:32px;
+      margin-left: 94px;
+  }

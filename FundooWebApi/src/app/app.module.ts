@@ -26,7 +26,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { from } from "rxjs";
 
 import {MatMenuModule} from '@angular/material/menu'
 import {MatDialogModule} from '@angular/material/dialog';
@@ -36,8 +35,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import { CreatenotesComponent } from './components/createnotes/createnotes.component';
-import { SinglenoteComponent } from './components/singlenote/singlenote.component';
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
+import { IconsComponent } from './components/icons/icons.component';
+import { NoteComponent } from './components/note/note.component';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +51,9 @@ import { DisplaynotesComponent } from './components/displaynotes/displaynotes.co
    DashboardComponent,
    DisplaynotesComponent,
    CreatenotesComponent,
-   SinglenoteComponent,
+   IconsComponent,
+   NoteComponent
+  
 
   ],
   imports: [
