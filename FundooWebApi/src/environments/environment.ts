@@ -21,7 +21,10 @@ export const environment = {
   addColorUrl:'/addColor',
   getArchieveUrl: '/allArchieved',
   getTrashedUrl:'/allTrashed',
-  getPinnedNoteUrl:'/allPinned'
+  getPinnedNoteUrl:'/allPinned',
+  searchNoteUrl:'/getNotesByTitle',
+  deletePermanentlyUrl:'/delete/',
+  restoreNoteUrl:'/restore/'
   
 
 

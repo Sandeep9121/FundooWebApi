@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './components/registration/registration.component';
@@ -38,6 +39,8 @@ import { CreatenotesComponent } from './components/createnotes/createnotes.compo
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { NoteComponent } from './components/note/note.component';
+import { NotePipe } from './pipes/note.pipe';
+
 
 
 @NgModule({
@@ -52,7 +55,8 @@ import { NoteComponent } from './components/note/note.component';
    DisplaynotesComponent,
    CreatenotesComponent,
    IconsComponent,
-   NoteComponent
+   NoteComponent,
+   NotePipe
   
 
   ],
@@ -79,6 +83,8 @@ import { NoteComponent } from './components/note/note.component';
     ,MatSelectModule
     ,MatGridListModule
     ,MatButtonToggleModule
+    ,FormsModule
+  
   
   ],
   providers: [],

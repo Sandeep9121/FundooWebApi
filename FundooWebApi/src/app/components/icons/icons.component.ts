@@ -18,25 +18,38 @@ export class IconsComponent implements OnInit {
   colorsList = [
     [
       { 
-        colorCode: "rgba(198, 222, 255,1)", name: "Blue" 
+        colorCode: "rgba(128, 0, 128,0.5)", name: "purple" 
       },
       { 
-        colorCode: "rgba(229, 228, 226,1)", name: "Gray" 
+        colorCode: "rgba(0, 0, 228,0.5)", name: "Navy" 
       },
       { 
-        colorCode: "rgba(230, 169, 236,1)", name: "Pink" 
+        colorCode: "rgba(0, 128, 0,0.5)", name: "Green" 
       },
     ],
     [
       { 
-        colorCode: "rgba(233, 171, 23,1)", name: "Yellow" 
+        colorCode: "rgba(255, 255,0.6)", name: "Yellow" 
       },
       { 
-        colorCode: "rgba(249, 150, 107,1)", name: "Orange" 
+        colorCode: "rgba(128, 0, 0,0.4)", name: "Maroon" 
       },
       { 
-        colorCode: "rgba(255,255,255,1)", name: "white" 
+        colorCode: "rgba(192, 192, 192,0.5)", name: "silver" 
+      }
+      
+    ],[
+      
+      { 
+        colorCode: "rgba(255, 255, 255,1)", name: "white" 
       },
+      { 
+        colorCode: "rgba(208, 225, 238,0.5)", name: "blue" 
+      },
+      { 
+        colorCode: "rgba(255, 0, 0,0.5)", name: "Red" 
+      },
+
     ]
   ]
 

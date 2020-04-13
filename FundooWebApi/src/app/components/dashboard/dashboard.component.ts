@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NoteService } from 'src/app/Services/note.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  title: String;
   value= '';
-  constructor(private router:Router) { }
+
+  constructor(private router:Router,private noteService:NoteService) { }
 
   ngOnInit() {
   }
@@ -40,5 +42,9 @@ onArchive(){
 
 onTrash(){
   this.router.navigate(['dashboard/displaynote'],{queryParams:{note:'trash'}});
+}
+
+searchNote() {
+  this.noteService.setSearchNoteData(this.title);
 }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { NoteService } from 'src/app/Services/note.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Note } from 'src/app/Model/note.model';
@@ -30,6 +30,25 @@ this.noteService.pinNote(this.note.notesId).subscribe(
   }
 );
   
+}
+
+
+RestoreNote(){
+  this.noteService.restoreNote(this.note.notesId).subscribe(
+    (response :any) => {
+      console.log("response : ", response);
+      this.matSnackBar.open(response['message'], "Ok", { duration: 4000})
+    }
+    );
+}
+
+deletePermanently(){
+  this.noteService.deleteNotePermanently(this.note.notesId).subscribe(
+    (response :any) => {
+      console.log("response : ", response);
+      this.matSnackBar.open(response['message'], "Ok", { duration: 4000})
+    }
+  );
 }
 
 }

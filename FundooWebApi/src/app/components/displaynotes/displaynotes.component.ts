@@ -17,6 +17,7 @@ export class DisplaynotesComponent implements OnInit {
   others=new Array<Note>();
   notes = new Array<Note>();
   pinned = new Array<Note>();
+  searchNotes: any;
 
   constructor(    private route: Router,
     private matSnackBar: MatSnackBar,
@@ -43,6 +44,8 @@ export class DisplaynotesComponent implements OnInit {
     
   
     });
+
+    this.getSearchNotes();
   }
 
   getOtherNotes(){
@@ -111,6 +114,17 @@ this.noteService.getPinnedNotes().subscribe(
   //   this.matSnackBar.open(error.error.message, "failed", {duration:5000})
   // }
 );
+  }
+
+
+  getSearchNotes(){
+    this.noteService.getSearchNotes().subscribe(
+      (message: any) => {
+console.log("searchtitle",message.notes);
+        this.searchNotes = message.notes;
+       
+      }
+    );
   }
 
 }

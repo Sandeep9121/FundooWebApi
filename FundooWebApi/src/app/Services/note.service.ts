@@ -8,6 +8,10 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class NoteService {
+  private _refreshNeeded$= new Subject<void>();
+  get refreshNeeded$() {
+    return this._refreshNeeded$;
+  }
   private noteApiUrl = environment.noteApiUrl;
   private createNoteUrl = environment.createNoteUrl;
   private getNotesUrl = environment.getAllNotesUrl;
@@ -18,10 +22,17 @@ export class NoteService {
   private getArchieveNoteUrl = environment.getArchieveUrl;
   private getTrashedNoteUrl = environment.getTrashedUrl;
   private getPinnedNoteUrl = environment.getPinnedNoteUrl;
+  private searchNoteUrl = environment.searchNoteUrl;
+  private title:string;
+  private deleteNotePermanentlyUrl = environment.deletePermanentlyUrl;
+
+  private restoreNoteUrl=environment.restoreNoteUrl;
 
   private httpOptions={
     headers: new HttpHeaders ({'content-type':'application/json' ,token: localStorage.getItem("token")})
     };
+
+    private searchNote=new Subject<any>();
 
   constructor(private httpService:HttpService , private httpClient:HttpClient) { }
 
@@ -71,5 +82,22 @@ getPinnedNotes()
 {
   return this.httpService.get(this.noteApiUrl+this.getPinnedNoteUrl , this.httpOptions);
 }
+
+setSearchNoteData(message:any){
+  return this.searchNote.next({notes:message});
+}
+
+getSearchNotes():Observable<any>
+{
+  return this.searchNote.asObservable();
+  
+}
+
+deleteNotePermanently(noteId:number){
+  return this.httpService.delete(this.noteApiUrl+this.deleteNotePermanentlyUrl+noteId,this.httpOptions);
+  }
+  restoreNote(noteId:number){
+    return this.httpService.put(this.noteApiUrl+this.restoreNoteUrl+noteId, "" , this.httpOptions);
+  }
 
 }
