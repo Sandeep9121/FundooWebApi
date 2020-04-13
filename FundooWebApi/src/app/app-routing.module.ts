@@ -9,6 +9,7 @@ import { UserVerificationComponent } from './components/user-verification/user-v
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreatenotesComponent } from './components/createnotes/createnotes.component';
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
+import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
 const routes: Routes = [
   {path:"registration",component:RegistrationComponent},
   {path:"login",component:LoginComponent},
@@ -20,7 +21,9 @@ const routes: Routes = [
   {path:"dashboard" , component:DashboardComponent,
   children:[{path:"createnotes" , component:CreatenotesComponent},
   {path:"", component:DisplaynotesComponent},
-  {path:"displaynote", component:DisplaynotesComponent}]}
+  {path:"displaynote", component:DisplaynotesComponent},
+  {path:"updatenote",component:UpdatenoteComponent}
+]}
   
 ];
 
