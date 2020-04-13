@@ -40,6 +40,7 @@ import { DisplaynotesComponent } from './components/displaynotes/displaynotes.co
 import { IconsComponent } from './components/icons/icons.component';
 import { NoteComponent } from './components/note/note.component';
 import { NotePipe } from './pipes/note.pipe';
+import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
 
 
 
@@ -56,7 +57,8 @@ import { NotePipe } from './pipes/note.pipe';
    CreatenotesComponent,
    IconsComponent,
    NoteComponent,
-   NotePipe
+   NotePipe,
+   UpdatenoteComponent
   
 
   ],
