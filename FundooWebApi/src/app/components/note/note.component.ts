@@ -2,6 +2,8 @@ import { Component, Input, OnInit} from '@angular/core';
 import { NoteService } from 'src/app/Services/note.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Note } from 'src/app/Model/note.model';
+import { MatDialog } from '@angular/material/dialog';
+import { UpdatenoteComponent } from '../updatenote/updatenote.component';
 
 @Component({
   selector: 'app-note',
@@ -15,7 +17,7 @@ export class NoteComponent implements OnInit {
 
 
   constructor(private noteService:NoteService,
-    private matSnackBar: MatSnackBar) { }
+    private matSnackBar: MatSnackBar,private dialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -49,6 +51,18 @@ deletePermanently(){
       this.matSnackBar.open(response['message'], "Ok", { duration: 4000})
     }
   );
+}
+
+open(note) {
+  console.log("note updating", note);
+  const matDialogueReference = this.dialog.open(UpdatenoteComponent, {
+    width: "auto",
+    height: "auto",
+    data: { note }
+  });
+  matDialogueReference.afterClosed().subscribe(result => {
+    console.log("note updated");
+  });
 }
 
 }

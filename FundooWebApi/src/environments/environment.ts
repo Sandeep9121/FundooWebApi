@@ -24,7 +24,8 @@ export const environment = {
   getPinnedNoteUrl:'/allPinned',
   searchNoteUrl:'/getNotesByTitle',
   deletePermanentlyUrl:'/delete/',
-  restoreNoteUrl:'/restore/'
+  restoreNoteUrl:'/restore/',
+  updateNoteUrl:'/update/'
   
 
 
