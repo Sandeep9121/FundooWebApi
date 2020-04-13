@@ -25,6 +25,7 @@ export class NoteService {
   private searchNoteUrl = environment.searchNoteUrl;
   private title:string;
   private deleteNotePermanentlyUrl = environment.deletePermanentlyUrl;
+  private updatenoteUrl=environment.updateNoteUrl;
 
   private restoreNoteUrl=environment.restoreNoteUrl;
 
@@ -99,5 +100,10 @@ deleteNotePermanently(noteId:number){
   restoreNote(noteId:number){
     return this.httpService.put(this.noteApiUrl+this.restoreNoteUrl+noteId, "" , this.httpOptions);
   }
+ 
+  updateNote(userId:number , note:any){
+    return this.httpService.put(this.noteApiUrl+this.updatenoteUrl+userId , note , this.httpOptions );
+  }
+
 
 }
