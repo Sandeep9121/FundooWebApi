@@ -41,6 +41,11 @@ import { IconsComponent } from './components/icons/icons.component';
 import { NoteComponent } from './components/note/note.component';
 import { NotePipe } from './pipes/note.pipe';
 import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
+import { LabelComponent } from './components/label/label.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatListModule,MatChipsModule} from '@angular/material';
+import { EditlabelComponent } from './components/editlabel/editlabel.component';
+import { LabelPipe } from './pipes/label.pipe';
 
 
 
@@ -58,36 +63,69 @@ import { UpdatenoteComponent } from './components/updatenote/updatenote.componen
    IconsComponent,
    NoteComponent,
    NotePipe,
-   UpdatenoteComponent
+   UpdatenoteComponent,
+   LabelComponent,
+   EditlabelComponent,
+   LabelPipe
   
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     BrowserAnimationsModule,
+
     MatInputModule,
+
     MatFormFieldModule,
+
     MatCardModule,
+
     MatButtonModule,
+
     HttpClientModule,
+
     MatSnackBarModule,
+
     ReactiveFormsModule,
+
     MatIconModule,
+
     MatToolbarModule,
+
     MatSidenavModule,
+
     MatTooltipModule,
-    MatDividerModule,
-    FlexLayoutModule
+
+    MatDividerModule
+
+    ,FlexLayoutModule
+
     ,MatMenuModule
+
     ,MatDialogModule
+
     ,MatBottomSheetModule
+
     ,MatSelectModule
+
     ,MatGridListModule
+
     ,MatButtonToggleModule
+
     ,FormsModule
+
+    ,MatCheckboxModule
+    ,MatListModule
+    ,MatChipsModule
   
   
+  ],
+
+  entryComponents:[
+    LabelComponent,
+    EditlabelComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

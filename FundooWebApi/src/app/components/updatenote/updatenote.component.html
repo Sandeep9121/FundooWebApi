@@ -1,10 +1,23 @@
 <div class="createnotes">
     <mat-card class="note-matcard" fxLayout="column" [ngStyle]="{ 'background-color': note.color }">
-        <textarea matInput type="text" placeholder="Title" [(ngModel)]="note.title"
+        
+        <!-- <textarea matInput type="text" placeholder="Take a note" [(ngModel)]="note.description"
             [ngStyle]="{ 'background-color': note.color }"></textarea>
-        <textarea matInput type="text" placeholder="Take a note" [(ngModel)]="note.description"
-            [ngStyle]="{ 'background-color': note.color }"></textarea>
-        <div *ngIf="note.updateDate!= null">
+        <div *ngIf="note.updateDate!= null"> -->
+            <textarea matInput type="text" placeholder="Take a note" [(ngModel)]="note.description" [ngStyle]="{ 'background-color': note.color }"  matTextareaAutosize></textarea>
+
+            <mat-chip-list>
+              <div  class="matchip" style="width: 100%;">
+                <mat-chip *ngFor="let label of labels">
+                    {{label.labelName}}
+                  <mat-icon matChipRemove >cancel</mat-icon>
+                  </mat-chip>
+              </div>
+            </mat-chip-list>
+      
+            <div *ngIf="note.updateDate!= null" class="date">
+
+
             <span style="margin-top: 8px;">
                 <small>Edited: {{note.updateDate}}</small></span>
         </div>

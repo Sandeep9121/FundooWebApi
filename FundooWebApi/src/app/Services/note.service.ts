@@ -105,5 +105,16 @@ deleteNotePermanently(noteId:number){
     return this.httpService.put(this.noteApiUrl+this.updatenoteUrl+userId , note , this.httpOptions );
   }
 
+  private view=new Subject<any>();
+  setView(data:any){
+  
+    this.view.next({view:data});
+    
+   }
+   
+   getView():Observable<any>{
+    return this.view.asObservable();
+   }
+
 
 }

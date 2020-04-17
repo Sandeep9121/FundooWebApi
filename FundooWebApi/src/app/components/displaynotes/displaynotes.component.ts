@@ -18,6 +18,7 @@ export class DisplaynotesComponent implements OnInit {
   notes = new Array<Note>();
   pinned = new Array<Note>();
   searchNotes: any;
+  view:any;
 
   constructor(    private route: Router,
     private matSnackBar: MatSnackBar,
@@ -26,6 +27,11 @@ export class DisplaynotesComponent implements OnInit {
    private param:any;
 
   ngOnInit() {
+    this.noteService.autoRefresh.subscribe(() => {
+      this.getOtherNotes();
+      this.getPinnedNotes();
+    });
+
     this.router.queryParams.subscribe(params=>{this.param=params['note'];
     if (this.param == "archive") 
     {
@@ -39,6 +45,7 @@ export class DisplaynotesComponent implements OnInit {
     {
      this.getOtherNotes();
      this.getPinnedNotes();
+     this.getView();
      
     }
     
@@ -125,6 +132,16 @@ console.log("searchtitle",message.notes);
        
       }
     );
+  }
+
+
+  getView(){
+    this.noteService.getView().subscribe(
+      (response:any)=>{
+               this.view=response.view;
+           }
+    );
+    
   }
 
 }

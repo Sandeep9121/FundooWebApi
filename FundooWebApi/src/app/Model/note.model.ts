@@ -10,4 +10,5 @@ export class Note {
     public updateDate: string;
     public reminder: string;
     public color: String;
+    public labels:[];
 }

@@ -26,8 +26,11 @@
         <button mat-icon-button class="refresh" (click)="refresh()">
           <mat-icon matTooltip="Refresh">refresh</mat-icon>
         </button>
-        <button mat-icon-button class="grid">
-          <mat-icon matTooltip="Grid view">grid_view</mat-icon>
+        <button mat-icon-button *ngIf="view" matTooltip="Grid View" (click)="getView()">
+          <mat-icon>view_module</mat-icon>
+        </button>
+        <button mat-icon-button *ngIf="!view" matTooltip="List View" (click)="getView()">
+          <mat-icon>view_agenda</mat-icon>
         </button>
         <button mat-icon-button class="setting">
           <mat-icon matTooltip="Settings">settings</mat-icon>
@@ -88,10 +91,21 @@
 
         <mat-divider class="divider"></mat-divider>
 
-    <div>
-        <span ><h3 class="label">LABELS</h3></span>
+
+
+
+        <div  fxLayout="column" fxLayoutAlign="space-around start">
+          <span ><h3 class="label">LABELS</h3></span>
+        <div >
+          <div *ngFor="let label of labels">
+            <button mat-button id="sidenav-button" >
+              <mat-icon style="margin-right: 40px;">label_outline</mat-icon>
+              {{ label.labelName }}
+            </button>
+          </div>
+        </div>
         <div>
-            <button mat-button class="navbutton">
+            <button mat-button class="navbutton" (click)="openEditLabelDialog()">
                 <mat-icon class ="sidenav-icon">create</mat-icon>
                <span class="icon-label">Edit labels</span>
                </button>

@@ -3,6 +3,7 @@ import { Note } from 'src/app/Model/note.model';
 import { NoteService } from 'src/app/Services/note.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef , MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Label } from 'src/app/Model/label.model';
 
 @Component({
   selector: 'app-updatenote',
@@ -11,6 +12,7 @@ import { MatDialogRef , MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class UpdatenoteComponent implements OnInit {
   note :Note;
+  labels:Label[];
   constructor(private noteService: NoteService,public matDialogRef: MatDialogRef<UpdatenoteComponent>,
     private snackbar: MatSnackBar , @Inject(MAT_DIALOG_DATA) public data: any) { 
       this.note=this.data.note;
@@ -18,6 +20,8 @@ export class UpdatenoteComponent implements OnInit {
     // this.note=this.data.note;
 
   ngOnInit() {
+    this.labels = this.note.labels;
+    console.log('labels:',this.labels);
   }
   
   onSubmit(){

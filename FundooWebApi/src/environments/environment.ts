@@ -25,7 +25,16 @@ export const environment = {
   searchNoteUrl:'/getNotesByTitle',
   deletePermanentlyUrl:'/delete/',
   restoreNoteUrl:'/restore/',
-  updateNoteUrl:'/update/'
+  updateNoteUrl:'/update/',
+
+  labelbaselUrl:'http://localhost:8081/label',
+createLabelUrl:'/create',
+addLabelUrl:'/addLabel',
+deleteLabelUrl:'/delete',
+updateLabelUrl:'/updateLabel',
+getLabelsUrl:'/getLabels',
+removeLabelUrl:'/delete'
+
   
 
 
