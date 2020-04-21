@@ -2,7 +2,7 @@
   <button mat-icon-button>
       <mat-icon matTooltip="Remind me">notifications_none</mat-icon>
   </button>
-  <button mat-icon-button>
+  <button mat-icon-button  (click)="addCollaborator(note)">
       <mat-icon matTooltip="Collaborator">person_add</mat-icon>
   </button>
   <button mat-icon-button [matMenuTriggerFor]="menu1">

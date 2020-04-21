@@ -48,4 +48,21 @@ export class UsersService {
 return this.httpService.put(this.userApiUrl+environment.userVerification+token,"" , this.httpOptions);
   }
 
+
+  addCollaborator(noteId:number , email:any)
+  {
+    return this.httpService.post(`${this.userApiUrl}${environment.addCollaboratorUrl}?notesId=${noteId}&email=${email}`, {}, {headers:new HttpHeaders({'token':localStorage.token})});
+  }
+
+  deleteCollaborator(noteId:number , email:any)
+  {
+    return this.httpService.delete(`${this.userApiUrl}${environment.deleteCollaboratorUrl}?notesId=${noteId}&email=${email}`, {headers:new HttpHeaders({'token':localStorage.token})}); 
+  }
+
+  getCollaborators(noteId:number)
+  {
+    return this.httpService.get(`${this.userApiUrl}${environment.getCollaboratorsUrl}?notesId=${noteId}`, {headers:new HttpHeaders({'token':localStorage.token})});
+  }
 }
+
+
