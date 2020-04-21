@@ -26,6 +26,9 @@ export const environment = {
   deletePermanentlyUrl:'/delete/',
   restoreNoteUrl:'/restore/',
   updateNoteUrl:'/update/',
+  addCollaboratorUrl:'/addCollaborator',
+  deleteCollaboratorUrl:'/removeCollaborator',
+  getCollaboratorsUrl:'/getAllCollaborators',
 
   labelbaselUrl:'http://localhost:8081/label',
 createLabelUrl:'/create',
@@ -34,10 +37,6 @@ deleteLabelUrl:'/delete',
 updateLabelUrl:'/updateLabel',
 getLabelsUrl:'/getLabels',
 removeLabelUrl:'/delete'
-
-  
-
-
 };
 
 /*

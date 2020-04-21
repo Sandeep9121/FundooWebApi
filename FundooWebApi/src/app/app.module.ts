@@ -46,6 +46,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatListModule,MatChipsModule} from '@angular/material';
 import { EditlabelComponent } from './components/editlabel/editlabel.component';
 import { LabelPipe } from './pipes/label.pipe';
+import { CollaboratorComponent } from './components/collaborator/collaborator.component';
 
 
 
@@ -66,7 +67,8 @@ import { LabelPipe } from './pipes/label.pipe';
    UpdatenoteComponent,
    LabelComponent,
    EditlabelComponent,
-   LabelPipe
+   LabelPipe,
+   CollaboratorComponent
   
 
   ],
@@ -125,7 +127,9 @@ import { LabelPipe } from './pipes/label.pipe';
 
   entryComponents:[
     LabelComponent,
-    EditlabelComponent
+    EditlabelComponent,
+    CollaboratorComponent
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

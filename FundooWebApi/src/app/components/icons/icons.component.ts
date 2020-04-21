@@ -4,6 +4,7 @@ import { Note } from 'src/app/Model/note.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { LabelComponent } from '../label/label.component';
+import { CollaboratorComponent } from '../collaborator/collaborator.component';
 
 @Component({
   selector: 'app-icons',
@@ -108,6 +109,16 @@ export class IconsComponent implements OnInit {
     });
   }
 
+
+  addCollaborator(note){
+    const dialogRef=this.matDialog.open(CollaboratorComponent,{
+      data:{noteId:note.noteId}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("collaborator closed");
+    });
+  }
+  
 
 
 }
