@@ -48,6 +48,12 @@ import { EditlabelComponent } from './components/editlabel/editlabel.component';
 import { LabelPipe } from './pipes/label.pipe';
 import { CollaboratorComponent } from './components/collaborator/collaborator.component';
 
+import { ReminderComponent } from './components/reminder/reminder.component';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { DatePipe } from '@angular/common';
+import {MatDatepickerModule , MatNativeDateModule} from '@angular/material';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+
 
 
 @NgModule({
@@ -68,7 +74,8 @@ import { CollaboratorComponent } from './components/collaborator/collaborator.co
    LabelComponent,
    EditlabelComponent,
    LabelPipe,
-   CollaboratorComponent
+   CollaboratorComponent,
+   ReminderComponent
   
 
   ],
@@ -121,17 +128,23 @@ import { CollaboratorComponent } from './components/collaborator/collaborator.co
     ,MatCheckboxModule
     ,MatListModule
     ,MatChipsModule
-  
+
+    ,OwlDateTimeModule
+    ,OwlNativeDateTimeModule 
+    ,MatDatepickerModule 
+    , MatNativeDateModule
+     ,MatMomentDateModule
   
   ],
 
   entryComponents:[
     LabelComponent,
     EditlabelComponent,
-    CollaboratorComponent
+    CollaboratorComponent,
+    ReminderComponent
     
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

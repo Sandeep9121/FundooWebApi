@@ -26,6 +26,11 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  reminder()
+{
+  this.router.navigate(['dashboard/displaynote'],{queryParams:{note:'rem'}});
+}
+
 
   ngOnInit() {
     this.getAllLabels();

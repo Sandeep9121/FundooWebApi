@@ -29,6 +29,8 @@ export const environment = {
   addCollaboratorUrl:'/addCollaborator',
   deleteCollaboratorUrl:'/removeCollaborator',
   getCollaboratorsUrl:'/getAllCollaborators',
+  addReminderUrl:'/addReminder',
+  removeReminderUrl:'/removeReminder',
 
   labelbaselUrl:'http://localhost:8081/label',
 createLabelUrl:'/create',

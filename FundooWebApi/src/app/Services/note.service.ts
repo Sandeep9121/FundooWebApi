@@ -117,4 +117,16 @@ private view=new Subject<any>();
    }
 
 
+   addReminder(noteId:number , reminder:any)
+{
+  return this.httpService.put
+  (`${this.noteApiUrl}${environment.addReminderUrl}?notesId=${noteId}`,reminder , this.httpOptions);
+}
+
+
+deleteReminder(noteId:number)
+{
+return this.httpService.put(`${this.noteApiUrl}${environment.removeReminderUrl}?notesId=${noteId}`, " " , this.httpOptions);
+}
+
 }

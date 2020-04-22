@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { LabelComponent } from '../label/label.component';
 import { CollaboratorComponent } from '../collaborator/collaborator.component';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-icons',
@@ -14,9 +15,16 @@ import { CollaboratorComponent } from '../collaborator/collaborator.component';
 export class IconsComponent implements OnInit {
 
   @Input() note: Note;
+  reminderDate:string;
+  datePipeString : string;
+  tommorrowDate:string;
+  setReminderDate:string;
 
-  constructor(private noteService: NoteService,
-    private matSnackBar: MatSnackBar, private matDialog: MatDialog) { }
+  constructor(private noteService:NoteService,
+    private matSnackBar: MatSnackBar,private matDialog: MatDialog , private datePipe: DatePipe) { 
+      this.datePipeString = datePipe.transform(Date.now(),'yyyy-MM-dd');
+    console.log("date today:",this.datePipeString);
+    }
 
   colorsList = [
     [
@@ -112,13 +120,81 @@ export class IconsComponent implements OnInit {
 
   addCollaborator(note){
     const dialogRef=this.matDialog.open(CollaboratorComponent,{
-      data:{noteId:note.noteId}
+      data:{notesId:note.notesId}
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log("collaborator closed");
+      console.log("collaborator ");
     });
   }
   
+
+  today(note)
+{
+  let time:string="9:00";
+this.reminderDate = this.datePipeString+","+time+":00";
+let newDate = new Date(this.reminderDate);
+console.log("Formated date:",newDate);
+let reminder={
+  reminder:newDate
+}
+this.noteService.addReminder(note.notesId , reminder).subscribe(
+  response => {
+    console.log("response : ", response);
+    this.matSnackBar.open(response['message'], "ok", { duration: 4000 });
+  }
+);
+
+}
+
+tommorrow(note)
+{
+  let time:string="9:00";
+  const cal = new Date();
+  cal.setDate(cal.getDate() + 1);
+  this.reminderDate =cal.getMonth() + 1 + '/' + cal.getDate() + '/' + cal.getFullYear();
+  this.tommorrowDate = this.datePipe.transform(this.reminderDate,'yyyy-MM-dd');
+  console.log("tommorrow date:",this.tommorrowDate);
+  this.setReminderDate = this.tommorrowDate+","+time+":00";
+
+
+  // this.reminderDate = cal.getFullYear() + ':' + cal.getMonth() + ':' + cal.getDate();
+  console.log("set date:",this.setReminderDate);
+  let newDate = new Date(this.setReminderDate);
+console.log("Formated date:",newDate);
+let reminder={
+  reminder:newDate
+}
+this.noteService.addReminder(note.notesId , reminder).subscribe(
+  response => {
+    console.log("response : ", response);
+    this.matSnackBar.open(response['message'], "ok", { duration: 4000 });
+  }
+);
+}
+
+nextWeek(note)
+{
+  let time:string="9:00";
+  const cal = new Date();
+  cal.setDate(cal.getDate() + (1 + 7 - cal.getDay()) % 7);  
+  
+  this.reminderDate = cal.getMonth() + 1 + '/' + cal.getDate() + '/' + cal.getFullYear();
+  console.log("next week monday:",this.reminderDate);
+
+  this.setReminderDate = this.reminderDate+","+time+":00";
+  console.log("set date:",this.setReminderDate);
+  let newDate = new Date(this.setReminderDate);
+console.log("Formated date:",newDate);
+let reminder={
+  reminder:newDate
+}
+this.noteService.addReminder(note.notesId , reminder).subscribe(
+  response => {
+    console.log("response : ", response);
+    this.matSnackBar.open(response['message'], "ok", { duration: 4000 });
+  }
+);
+}
 
 
 }

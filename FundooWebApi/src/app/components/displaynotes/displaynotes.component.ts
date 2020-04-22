@@ -144,4 +144,21 @@ console.log("searchtitle",message.notes);
     
   }
 
+
+  reminderNotes()
+  {
+    this.noteService.getAllNotes().subscribe(
+
+      (response: any) => {
+        console.log("response", response);
+        console.log("notes:",response.obj);
+        this.others = response['obj'];
+         this.others.filter(note=>note.reminder != null).map(note=>this.notes.push(note));
+      },  
+      (error:any)=> {
+        this.matSnackBar.open(error.error.message, "failed", {duration:5000})
+      }
+    );
+  }
+
 }
