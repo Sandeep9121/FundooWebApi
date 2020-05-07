@@ -49,7 +49,7 @@ return this.httpService.put(this.userApiUrl+environment.userVerification+token,"
   }
 
 
-  addCollaborator(noteId:number , email:any)
+  addCollaborator(noteId:number ,email:any)
   {
     return this.httpService.post(`${this.userApiUrl}${environment.addCollaboratorUrl}?notesId=${noteId}&email=${email}`, {}, {headers:new HttpHeaders({'token':localStorage.token})});
   }
@@ -66,3 +66,4 @@ return this.httpService.put(this.userApiUrl+environment.userVerification+token,"
 }
 
 
+//https://www.interserver.net/tips/kb/troubleshoot-500-internal-server-error/

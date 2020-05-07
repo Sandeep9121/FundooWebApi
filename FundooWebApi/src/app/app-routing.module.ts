@@ -10,6 +10,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreatenotesComponent } from './components/createnotes/createnotes.component';
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
+import { ImageuploadComponent } from './components/imageupload/imageupload.component';
 const routes: Routes = [
   {path:"registration",component:RegistrationComponent},
   {path:"login",component:LoginComponent},
@@ -22,7 +23,9 @@ const routes: Routes = [
   children:[{path:"createnotes" , component:CreatenotesComponent},
   {path:"", component:DisplaynotesComponent},
   {path:"displaynote", component:DisplaynotesComponent},
-  {path:"updatenote",component:UpdatenoteComponent}
+  {path:"updatenote",component:UpdatenoteComponent},
+  {path:"imageupload",component:ImageuploadComponent}
+  
 ]}
   
 ];

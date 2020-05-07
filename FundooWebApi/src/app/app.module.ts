@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
@@ -53,6 +53,9 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { DatePipe } from '@angular/common';
 import {MatDatepickerModule , MatNativeDateModule} from '@angular/material';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { BrowserModule }  from '@angular/platform-browser';
+import { ImageuploadComponent } from './components/imageupload/imageupload.component';
+
 
 
 
@@ -75,7 +78,9 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
    EditlabelComponent,
    LabelPipe,
    CollaboratorComponent,
-   ReminderComponent
+   ReminderComponent,
+   ImageuploadComponent
+
   
 
   ],

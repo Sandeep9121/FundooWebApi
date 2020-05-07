@@ -26,7 +26,7 @@ export class NoteService {
   private title:string;
   private deleteNotePermanentlyUrl = environment.deletePermanentlyUrl;
   private updatenoteUrl=environment.updateNoteUrl;
-
+  private imageNoteUrl=environment.uploadNoteimageUrl;
   private restoreNoteUrl=environment.restoreNoteUrl;
 
   private httpOptions={
@@ -46,6 +46,11 @@ createNote(noteDetail:any):Observable<any>
 {
   console.log("note:",noteDetail);
 return this.httpService.post(this.noteApiUrl+this.createNoteUrl,noteDetail,{headers:new HttpHeaders({'token':localStorage.token})});
+}
+
+uploadImage(noteDetail:any):Observable<any>{
+return this.httpService.post(this.noteApiUrl+this.imageNoteUrl,noteDetail,{headers:new HttpHeaders({'token':localStorage.token})});
+
 }
 
 getAllNotes():Observable<any>{

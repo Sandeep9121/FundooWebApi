@@ -2,10 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { NoteService } from 'src/app/Services/note.service';
 import { Note } from 'src/app/Model/note.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { LabelComponent } from '../label/label.component';
 import { CollaboratorComponent } from '../collaborator/collaborator.component';
 import { DatePipe } from '@angular/common';
+import { ImageuploadComponent } from '../imageupload/imageupload.component';
 
 @Component({
   selector: 'app-icons',
@@ -85,6 +86,14 @@ export class IconsComponent implements OnInit {
     );
 
   }
+  addCollaborator(note){
+    const dialogRef=this.matDialog.open(CollaboratorComponent,{
+      data:{notesId:note.notesId}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("collaborator closed ");
+    });
+  }
 
   deleteNote() {
     this.noteService.trashNote(this.note.notesId).subscribe(
@@ -118,14 +127,7 @@ export class IconsComponent implements OnInit {
   }
 
 
-  addCollaborator(note){
-    const dialogRef=this.matDialog.open(CollaboratorComponent,{
-      data:{notesId:note.notesId}
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log("collaborator ");
-    });
-  }
+ 
   
 
   today(note)
@@ -196,6 +198,15 @@ this.noteService.addReminder(note.notesId , reminder).subscribe(
 );
 }
 
+uploadImage() {
+  const dialogConfig = new MatDialogConfig();
+  dialogConfig.data =
+  {
+    'noteid': this.note.notesId
+  };
+  //this.router.navigate(['upload'])
+  const dialogRef = this.matDialog.open(ImageuploadComponent,dialogConfig);
+}
 
 }
 

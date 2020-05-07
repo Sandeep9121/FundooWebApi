@@ -1,7 +1,7 @@
 
 <div class="container" >
     <div class="mat-display"  >
-        <mat-card [ngStyle]="{ 'background-color': note.color }">
+        <mat-card  [ngStyle]="{ 'background-color': note.color }">
             <div *ngIf="!note.pinned" class="pin-div">
                 <button mat-icon-button class="pin" (click)="pinNote()">
                   <mat-icon matTooltip="pin note">

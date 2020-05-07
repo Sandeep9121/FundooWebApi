@@ -19,8 +19,13 @@
         </div>
       </div>
     </mat-menu>
-  <button mat-icon-button>
-      <mat-icon matTooltip="Add image">crop_original</mat-icon>
+  <button mat-icon-button >
+    <!-- <input formControlName="document" type="file"  [uploader]="uploader" multiple/> -->
+      <!-- <mat-icon matTooltip="Add image">crop_original</mat-icon> -->
+      <!-- <mat-file-upload [file]="file" > -->
+      <mat-icon matTooltip="Add image" (click)="uploadImage()" >crop_original</mat-icon> 
+    <!-- </mat-file-upload> -->
+    <input id="fileToUpload" type="file" style="display:none;">
   </button>
   <div *ngIf="!note.archieved">
   <button mat-icon-button (click)="archieveNote()">
