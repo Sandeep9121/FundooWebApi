@@ -202,9 +202,8 @@ uploadImage() {
   const dialogConfig = new MatDialogConfig();
   dialogConfig.data =
   {
-    'noteid': this.note.notesId
+    'notesId': this.note.notesId
   };
-  //this.router.navigate(['upload'])
   const dialogRef = this.matDialog.open(ImageuploadComponent,dialogConfig);
 }
 

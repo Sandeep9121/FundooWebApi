@@ -31,7 +31,7 @@ export const environment = {
   getCollaboratorsUrl:'/getAllCollaborators',
   addReminderUrl:'/addReminder',
   removeReminderUrl:'/removeReminder',
-  uploadNoteimageUrl:'',
+  uploadNoteimageUrl:'/uploadImg',
 
   labelbaselUrl:'http://localhost:8081/label',
 createLabelUrl:'/create',

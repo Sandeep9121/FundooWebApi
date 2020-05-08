@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { HttpService } from './http.service';
 import { Observable, Subject } from 'rxjs';
+import { FormBuilder } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -34,8 +35,8 @@ export class NoteService {
     };
 
     private searchNote=new Subject<any>();
-
-  constructor(private httpService:HttpService , private httpClient:HttpClient) { }
+   
+  constructor(private httpService:HttpService , private httpClient:HttpClient,private formBuilder: FormBuilder) { }
 
   private subject = new Subject<any>();
   public get autoRefresh() {
@@ -47,10 +48,20 @@ createNote(noteDetail:any):Observable<any>
   console.log("note:",noteDetail);
 return this.httpService.post(this.noteApiUrl+this.createNoteUrl,noteDetail,{headers:new HttpHeaders({'token':localStorage.token})});
 }
+// selectedFile: File;
+// retrievedImage: any;
+// base64Data: any;
+// retrieveResonse: any;
+// message: string;
+// imageName: any;
 
-uploadImage(noteDetail:any):Observable<any>{
-return this.httpService.post(this.noteApiUrl+this.imageNoteUrl,noteDetail,{headers:new HttpHeaders({'token':localStorage.token})});
-
+      
+private uploadImageData = new FormData();
+uploadImage(notesId:number,file:FormData):Observable<any>{
+  
+ // this.uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
+//return this.httpService.post(this.noteApiUrl+this.imageNoteUrl,noteDetail,{headers:new HttpHeaders({'token':localStorage.token})});
+return this.httpService.put(`${this.noteApiUrl}${this.imageNoteUrl}?notesId=${notesId}&file=${file}`, "" , this.httpOptions);
 }
 
 getAllNotes():Observable<any>{

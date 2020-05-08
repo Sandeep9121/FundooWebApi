@@ -12,6 +12,13 @@ import { DataService } from 'src/app/Services/data.service';
   styleUrls: ['./imageupload.component.scss']
 })
 export class ImageuploadComponent implements OnInit {
+  
+  selectedFile: File;
+  retrievedImage: any;
+  base64Data: any;
+  retrieveResonse: any;
+  message: string;
+  imageName: any;
 
   constructor(private formBuilder: FormBuilder,
     private http: HttpClient, private httpservice: UsersService,
@@ -39,22 +46,23 @@ export class ImageuploadComponent implements OnInit {
       
     }
     verify: boolean
+
+
     upload() {
     
-      let body = new FormData();
+      const uploadImageData = new FormData();
       
-      body.append("file", this.file);
+      uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
   
-      this.noteService.uploadImage(this.noteid)
+      this.noteService.uploadImage(this.notesId,uploadImageData)
         .subscribe( (data) => { console.log(data) }, error => console.log(error),() => {
            console.log("completed")
             this.dataservice.changeMessage("uploaded");
           }
-          
       );
     }
     
-    noteid = this.data.noteid;
+    notesId = this.data.notesId;
    
 
 }
